@@ -1,215 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astro Tântrica - Massagem Tântrica</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0a0a0a; /* preto */
-      color: #f5e6d0; /* creme claro */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astro Tântrica - Massagem Tântrica</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a; 
+    color: #f5e6d0;
+  }
 
-    header {
-      background: #4b0033; /* roxo vinho fosco */
-      border-bottom: 2px solid #d4af37; /* dourado */
-      color: #d4af37;
-      text-align: center;
-      padding: 20px;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+  header {
+    background: #4b0033; 
+    border-bottom: 2px solid #d4af37; 
+    color: #d4af37;
+    text-align: center;
+    padding: 25px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
 
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+  section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
 
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #d4af37; 
+    font-size: 2.2rem;
+  }
+
+  /* Galeria de fotos */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .galeria img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #33001a;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #33001a88;
+  }
+
+  /* Texto */
+  .texto {
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #e6dcc6;
+  }
+
+  /* Botões */
+  .btn {
+    display: block;
+    width: max-content;
+    margin: 30px auto;
+    padding: 20px 60px;
+    background: #4b0033;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 12px #00000055;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .btn:hover {
+    transform: scale(1.08);
+    background: #33001a;
+    box-shadow: 0 0 18px #00000088;
+  }
+
+  /* Depoimentos */
+  .depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .depo {
+    background: #4b0033; 
+    border: 2px solid #d4af37;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px #00000055;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .depo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px #00000088;
+  }
+
+  .depo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #33001a;
+    margin-bottom: 15px;
+    object-fit: cover;
+  }
+
+  .depo p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #e6dcc6;
+  }
+
+  .depo strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #d4af37;
+  }
+
+  /* FAQ moderno */
+  .faq-item {
+    background: #33001a;
+    border: 1px solid #d4af37;
+    margin: 15px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .faq-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px #00000088;
+  }
+
+  .faq-item button {
+    width: 100%;
+    padding: 18px;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: bold;
+    background: #4b0033;
+    border: none;
+    color: #d4af37;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .faq-item button:hover {
+    background: #33001a;
+  }
+
+  .faq-item p {
+    padding: 15px 20px;
+    margin: 0;
+    display: none;
+    color: #e6dcc6;
+    font-size: 1.1rem;
+  }
+
+  /* WhatsApp Flutuante */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #33001a; 
+    color: #fff;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 0 15px #00000088;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #000000aa;
+  }
+
+  footer {
+    background: #33001a;
+    color: #e6dcc6;
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid #d4af37;
+  }
+
+  @media (max-width: 600px) {
     h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #d4af37; /* dourado */
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
-
-    /* Galeria de fotos */
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .galeria img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 12px;
-      border: 2px solid #33001a; /* borda vinho escuro */
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #33001a88;
-    }
-
-    /* Texto */
-    .texto {
-      line-height: 1.8;
-      text-align: justify;
-      font-size: 1.2rem;
-      color: #e6dcc6;
-    }
-
-    /* Botões */
     .btn {
-      display: block;
-      width: max-content;
-      margin: 30px auto;
-      padding: 15px 50px;
-      background: #4b0033; /* roxo vinho fosco */
-      color: #fff;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      border: 2px solid #d4af37; /* dourado */
-      box-shadow: 0 0 10px #00000055;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .btn:hover {
-      transform: scale(1.08);
-      background: #33001a; /* vinho mais escuro */
-      box-shadow: 0 0 15px #00000077;
-    }
-
-    /* Depoimentos */
-    .depoimentos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .depo {
-      background: #4b0033; /* vinho fosco */
-      border: 2px solid #d4af37;
-      padding: 25px;
-      border-radius: 15px;
+      width: 90%;
       text-align: center;
-      box-shadow: 0 0 10px #00000055;
-      transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .depo:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px #00000088;
-    }
-
-    .depo img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid #33001a;
-      margin-bottom: 15px;
-      object-fit: cover;
-    }
-
-    .depo p {
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #e6dcc6;
-    }
-
-    .depo strong {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #d4af37;
-    }
-
-    /* FAQ */
-    .faq-item {
-      background: #4b0033;
-      border: 1px solid #d4af37;
-      margin: 10px 0;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .faq-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 10px #00000088;
-    }
-
-    .faq-item button {
-      width: 100%;
-      padding: 15px;
-      text-align: left;
-      font-size: 1.1rem;
-      font-weight: bold;
-      background: #33001a;
-      border: none;
-      color: #d4af37;
-      cursor: pointer;
-    }
-
-    .faq-item p {
-      padding: 15px;
-      margin: 0;
-      display: none;
-      color: #e6dcc6;
-    }
-
-    /* WhatsApp Flutuante */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #33001a; /* vinho escuro */
-      color: #fff;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      box-shadow: 0 0 15px #00000088;
-      z-index: 1000;
-      text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #000000aa;
-    }
-
-    footer {
-      background: #33001a; /* vinho escuro */
-      color: #e6dcc6;
-      text-align: center;
-      padding: 25px;
-      border-top: 2px solid #d4af37;
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      h2 {
-        font-size: 1.6rem;
-      }
-      .btn {
-        width: 90%;
-        text-align: center;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <header>Astro Tântrica</header>
@@ -276,18 +281,37 @@
   <!-- FAQ -->
   <section>
     <h2>Perguntas Frequentes</h2>
+
     <div class="faq-item">
       <button onclick="toggleFAQ(this)">O que é a massagem tântrica?</button>
-      <p>A massagem tântrica é um processo de expansão da energia vital, que promove prazer, autoconhecimento e relaxamento profundo.</p>
+      <p>É um processo de expansão da energia vital, promovendo prazer, relaxamento e autoconhecimento.</p>
     </div>
+
     <div class="faq-item">
-      <button onclick="toggleFAQ(this)">É seguro?</button>
+      <button onclick="toggleFAQ(this)">É seguro participar?</button>
       <p>Sim, todas as sessões são conduzidas com ética, respeito e discrição total.</p>
     </div>
+
     <div class="faq-item">
       <button onclick="toggleFAQ(this)">Preciso ter experiência?</button>
-      <p>Não, cada sessão é personalizada de acordo com suas necessidades e limites.</p>
+      <p>Não, cada sessão é personalizada para o seu conforto e limites pessoais.</p>
     </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">Quanto tempo dura uma sessão?</button>
+      <p>As sessões geralmente duram entre 60 a 90 minutos, dependendo da técnica escolhida.</p>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">É necessário agendar com antecedência?</button>
+      <p>Sim, recomendamos agendamento prévio para garantir disponibilidade e atendimento personalizado.</p>
+    </div>
+
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">Quais cuidados devo ter antes da massagem?</button>
+      <p>Evite refeições pesadas e bebidas alcoólicas. Venha relaxado e aberto à experiência.</p>
+    </div>
+
   </section>
 
   <!-- WhatsApp Flutuante -->
