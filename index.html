@@ -206,13 +206,19 @@
   }
 
   @media (max-width: 600px) {
-    h2 {
-      font-size: 1.6rem;
-    }
-    .btn {
-      width: 90%;
-      text-align: center;
-    }
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    width: 90%;          /* largura adequada para celular */
+    margin: 20px auto;   /* centraliza o botão */
+    text-align: center;  /* mantém texto centralizado */
+    display: block;      /* força botão como bloco */
+    padding: 18px 0;     /* ajusta altura para caber melhor na tela */
+  }
+}
+
   }
 
 
