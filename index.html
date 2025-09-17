@@ -224,14 +224,14 @@
   font-weight: 500;
 }
 
-/* Propagandas flutuantes pulsando - versão neutra */
+/* Propagandas flutuantes pulsando - fundo preto com dourado */
 .propaganda-flutuante {
   position: fixed;
   width: 120px;
   height: 120px;
   background: #0a0a0a; /* preto escuro */
-  color: #cccccc; /* texto cinza claro */
-  border: 2px solid #555555; /* borda cinza escura */
+  color: #d4af37; /* texto dourado */
+  border: 2px solid #d4af37; /* borda dourada */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -241,8 +241,14 @@
   text-align: center;
   z-index: 1000;
   animation: pulsar 1.5s infinite;
-  box-shadow: 0 0 12px #00000055;
+  box-shadow: 0 0 15px #d4af3788; /* leve brilho dourado */
 }
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
 
 }
 
