@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro Tântrica - Massagem Tântrica</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    header {
+      background: #000;
+      color: #e0b3ff;
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #e0b3ff;
+    }
+
+    /* Galeria de fotos */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sessão de texto */
+    .texto {
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    /* Propagandas pulsando */
+    .propagandas {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .prop {
+      background: linear-gradient(45deg, #8000ff, #e60073);
+      padding: 20px 40px;
+      border-radius: 12px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #fff;
+      animation: pulse 2s infinite;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Depoimentos */
+    .depoimentos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .depo {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      font-style: italic;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: #222;
+      margin: 10px 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-item button {
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: #333;
+      border: none;
+      color: #e0b3ff;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      padding: 15px;
+      margin: 0;
+      display: none;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Astro Tântrica
+  </header>
+
+  <!-- Sessão de Fotos -->
+  <section>
+    <h2>Momentos de Massagem</h2>
+    <div class="galeria">
+      <img src="fotos/massagem1.jpg" alt="Massagem 1">
+      <img src="fotos/massagem2.jpg" alt="Massagem 2">
+      <img src="fotos/massagem3.jpg" alt="Massagem 3">
+    </div>
+  </section>
+
+  <!-- Sessão Terapeutas -->
+  <section>
+    <h2>Terapeutas em Destaque</h2>
+    <div class="galeria">
+      <img src="fotos/terapeuta1.jpg" alt="Terapeuta 1">
+      <img src="fotos/terapeuta2.jpg" alt="Terapeuta 2">
+      <img src="fotos/terapeuta3.jpg" alt="Terapeuta 3">
+    </div>
+  </section>
+
+  <!-- Texto Explicativo -->
+  <section>
+    <h2>Sobre a Massagem Tântrica</h2>
+    <div class="texto">
+      <p>
+        A massagem tântrica é uma prática milenar que une técnicas de respiração, toques conscientes e energia vital, proporcionando ao corpo e à mente um estado de relaxamento profundo e expansão da consciência. Diferente de qualquer outra massagem, o tantra trabalha não apenas a parte física, mas também aspectos emocionais e energéticos, liberando bloqueios e ampliando a sensibilidade.
+      </p>
+      <p>
+        Na Astro Tântrica, acreditamos que cada sessão é única e personalizada. Nossos terapeutas especializados criam um ambiente seguro, acolhedor e transformador, guiando você em uma experiência de conexão com o próprio corpo e suas potencialidades.
+      </p>
+    </div>
+  </section>
+
+  <!-- Propagandas -->
+  <section>
+    <h2>Ofertas Especiais</h2>
+    <div class="propagandas">
+      <div class="prop">Sessão Relaxante - Promoção</div>
+      <div class="prop">Pacote Detox Energético</div>
+      <div class="prop">Experiência Completa Tantra</div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section>
+    <h2>O que dizem nossos clientes</h2>
+    <div class="depoimentos">
+      <div class="depo">“Uma experiência única, que mudou minha forma de me conectar comigo mesmo.” – Carlos M.</div>
+      <div class="depo">“Profissionais incríveis, ambiente acolhedor e transformador.” – Mariana S.</div>
+      <div class="depo">“A melhor escolha que já fiz para meu bem-estar.” – Felipe A.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">O que é a massagem tântrica?</button>
+      <p>A massagem tântrica é um processo de autoconhecimento, expansão de energia e relaxamento profundo.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">Preciso ter experiência?</button>
+      <p>Não, nossos terapeutas guiam cada sessão de acordo com sua necessidade.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">É seguro?</button>
+      <p>Sim, todas as sessões são conduzidas com ética, respeito e cuidado total.</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleFAQ(button) {
+      const p = button.nextElementSibling;
+      p.style.display = p.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
 
