@@ -7,285 +7,284 @@
   <style>
     body {
       margin: 0;
-      font-family: "Helvetica Neue", sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0a0a0a;
-      color: #f2f2f2;
-      line-height: 1.6;
+      color: #f0e6d2;
     }
 
     header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #1a0d0d, #0a0a0a);
+      background: #111;
       border-bottom: 2px solid #b8860b;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
       color: #d4af37;
-      text-shadow: 0 0 8px rgba(212,175,55,0.6);
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #c0a060;
+      text-align: center;
+      padding: 15px;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
     }
 
     section {
       padding: 60px 20px;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
     }
+
     h2 {
       text-align: center;
       margin-bottom: 40px;
       color: #d4af37;
-      text-shadow: 0 0 5px rgba(212,175,55,0.5);
+      font-size: 2rem;
     }
 
-    .grid {
+    /* Galeria de fotos */
+    .galeria {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 15px;
     }
-    .grid img {
+
+    .galeria img {
       width: 100%;
+      height: 260px;
+      object-fit: cover;
       border-radius: 12px;
-      border: 2px solid #b8860b;
-      opacity: 0;
-      transform: scale(0.95);
-      animation: fadeIn 1s forwards;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    }
-    .grid img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(212,175,55,0.6);
-      border-color: #d4af37;
-    }
-
-    .grid img:nth-child(2) { animation-delay: 0.2s; }
-    .grid img:nth-child(3) { animation-delay: 0.4s; }
-    .grid img:nth-child(4) { animation-delay: 0.6s; }
-
-    .texto {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #f2f2f2;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #0a0a0a;
       border: 2px solid #d4af37;
-      color: #d4af37;
-      padding: 14px 28px;
-      margin: 20px auto;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      background: #d4af37;
-      color: #0a0a0a;
+      transition: transform 0.3s;
     }
 
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Texto */
+    .texto {
+      line-height: 1.8;
+      text-align: justify;
+      font-size: 1.2rem;
+      color: #e6dcc6;
+    }
+
+    /* Botões */
+    .btn {
+      display: block;
+      width: max-content;
+      margin: 30px auto;
+      padding: 15px 40px;
+      background: linear-gradient(45deg, #d4af37, #a67c00);
+      color: #111;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      transition: transform 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    /* Depoimentos */
     .depoimentos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      gap: 25px;
     }
-    .depoimento {
-      background: #1a0d0d;
-      padding: 25px;
+
+    .depo {
+      background: #1a1a1a;
+      border: 2px solid #d4af37;
+      padding: 20px;
       border-radius: 15px;
       text-align: center;
-      border: 1px solid #b8860b;
-      color: #f2f2f2;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 1s forwards;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      box-shadow: 0 0 12px rgba(0,0,0,0.6);
     }
-    .depoimento:hover {
-      box-shadow: 0 0 20px rgba(212,175,55,0.6);
-      border-color: #d4af37;
-      transform: translateY(-5px);
-    }
-    .depoimento:nth-child(2) { animation-delay: 0.3s; }
-    .depoimento:nth-child(3) { animation-delay: 0.6s; }
 
-    .depoimento img {
+    .depo img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
+      border: 2px solid #d4af37;
       margin-bottom: 15px;
       object-fit: cover;
-      border: 3px solid #d4af37;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .depoimento img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(212,175,55,0.7);
     }
 
-    .depoimento p {
-      font-size: 1rem;
+    .depo p {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #e6dcc6;
     }
-    .depoimento h4 {
+
+    .depo strong {
+      display: block;
       margin-top: 10px;
-      color: #c0a060;
-    }
-
-    .faq {
-      max-width: 800px;
-      margin: auto;
-    }
-    .faq h3 {
-      margin-top: 20px;
+      font-weight: bold;
       color: #d4af37;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0a0a0a;
-      color: #aaa;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
+    /* FAQ */
+    .faq-item {
+      background: #1a1a1a;
+      border: 1px solid #d4af37;
+      margin: 10px 0;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-    /* Botão WhatsApp flutuante */
+    .faq-item button {
+      width: 100%;
+      padding: 15px;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background: #111;
+      border: none;
+      color: #d4af37;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      padding: 15px;
+      margin: 0;
+      display: none;
+      color: #e6dcc6;
+    }
+
+    /* WhatsApp Flutuante */
     .whatsapp-float {
       position: fixed;
-      width: 60px;
-      height: 60px;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
-      color: #fff;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      z-index: 1000;
       text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(37,211,102,0.7);
     }
 
-    /* Animações */
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #d4af37;
+      font-size: 0.9rem;
     }
 
+    /* Mobile */
     @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .btn {
+        width: 90%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Astro Tântrica</h1>
-    <p>Experiências únicas em massagem tântrica</p>
-    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
+    Astro Tântrica
   </header>
 
+  <!-- Sessão Fotos -->
   <section>
-    <h2>Massagens em Destaque</h2>
-    <div class="grid">
+    <h2>Momentos de Massagem</h2>
+    <div class="galeria">
       <img src="fotos/massagem1.jpg" alt="Massagem 1">
       <img src="fotos/massagem2.jpg" alt="Massagem 2">
       <img src="fotos/massagem3.jpg" alt="Massagem 3">
       <img src="fotos/massagem4.jpg" alt="Massagem 4">
     </div>
-    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
+    <a href="https://wa.me/5599999999999" target="_blank" class="btn">Agende sua massagem aqui</a>
   </section>
 
+  <!-- Sessão Terapeutas -->
   <section>
     <h2>Terapeutas em Destaque</h2>
-    <div class="grid">
+    <div class="galeria">
       <img src="fotos/terapeuta1.jpg" alt="Terapeuta 1">
       <img src="fotos/terapeuta2.jpg" alt="Terapeuta 2">
       <img src="fotos/terapeuta3.jpg" alt="Terapeuta 3">
     </div>
-    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
+    <a href="https://wa.me/5599999999999" target="_blank" class="btn">Agende sua massagem aqui</a>
   </section>
 
+  <!-- Texto Explicativo -->
   <section>
     <h2>Sobre a Massagem Tântrica</h2>
-    <p class="texto">
-      A massagem tântrica é uma jornada de autoconhecimento, prazer e libertação.
-      Ela trabalha energia vital, desbloqueia emoções e expande a consciência.
-      Nossa missão é oferecer um ambiente seguro, acolhedor e transformador,
-      conduzido por terapeutas experientes que respeitam seu tempo e limites.
-      A experiência promove relaxamento profundo, conexão interior e intensificação do prazer erótico,
-      proporcionando uma vivência única de bem-estar físico e emocional.
-    </p>
-    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
+    <div class="texto">
+      <p>
+        A massagem tântrica é uma experiência que desperta todos os sentidos, proporcionando prazer, relaxamento profundo e autoconhecimento. 
+        Ela atua desbloqueando energias, aumentando a sensibilidade do corpo e trazendo uma conexão intensa com o presente.
+      </p>
+      <p>
+        Na Astro Tântrica, criamos um espaço sofisticado e reservado, onde cada detalhe é pensado para o seu bem-estar. 
+        Nossos terapeutas são especializados e conduzem cada sessão com respeito, cuidado e sigilo absoluto.
+      </p>
+    </div>
+    <a href="https://wa.me/5599999999999" target="_blank" class="btn">Agende sua massagem aqui</a>
   </section>
 
+  <!-- Depoimentos -->
   <section>
     <h2>Depoimentos</h2>
     <div class="depoimentos">
-      <div class="depoimento">
+      <div class="depo">
         <img src="fotos/cliente1.jpg" alt="Cliente 1">
-        <p>"Uma experiência transformadora, nunca imaginei sentir tamanha energia. Recomendo a todos!"</p>
-        <h4>- Mariana</h4>
+        <p>“Uma experiência transformadora, nunca imaginei algo tão profundo.”</p>
+        <strong>– Camila R.</strong>
       </div>
-      <div class="depoimento">
+      <div class="depo">
         <img src="fotos/cliente2.jpg" alt="Cliente 2">
-        <p>"Profissionalismo e sensibilidade. Saí renovado e com outra visão sobre meu corpo e prazer."</p>
-        <h4>- Rafael</h4>
+        <p>“Ambiente reservado, elegante e profissionais incríveis. Recomendo demais.”</p>
+        <strong>– Lucas M.</strong>
       </div>
-      <div class="depoimento">
+      <div class="depo">
         <img src="fotos/cliente3.jpg" alt="Cliente 3">
-        <p>"Ambiente acolhedor e energia incrível. Uma das melhores escolhas que já fiz na vida."</p>
-        <h4>- Ana Paula</h4>
+        <p>“A massagem me trouxe paz, prazer e uma nova forma de me enxergar.”</p>
+        <strong>– Juliana S.</strong>
       </div>
     </div>
-    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
   </section>
 
+  <!-- FAQ -->
   <section>
     <h2>Perguntas Frequentes</h2>
-    <div class="faq">
-      <h3>1. Como funciona a massagem tântrica?</h3>
-      <p>É uma prática que envolve toques conscientes para liberar energia e proporcionar bem-estar físico e emocional.</p>
-
-      <h3>2. A massagem é erótica?</h3>
-      <p>A massagem tântrica pode envolver prazer erótico, mas sempre com respeito, segurança e foco no autoconhecimento.</p>
-
-      <h3>3. Preciso tirar a roupa?</h3>
-      <p>Sim, a nudez faz parte do processo, mas você sempre estará no controle e respeitado em seus limites.</p>
-
-      <h3>4. Como agendar uma sessão?</h3>
-      <p>Basta clicar nos botões de WhatsApp espalhados pelo site e agendar sua experiência.</p>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">O que é a massagem tântrica?</button>
+      <p>A massagem tântrica é um processo de expansão da energia vital, que promove prazer, autoconhecimento e relaxamento profundo.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">É seguro?</button>
+      <p>Sim, todas as sessões são conduzidas com ética, respeito e discrição total.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleFAQ(this)">Preciso ter experiência?</button>
+      <p>Não, cada sessão é personalizada de acordo com suas necessidades e limites.</p>
     </div>
   </section>
 
+  <!-- WhatsApp Flutuante -->
+  <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float">💬</a>
+
   <footer>
-    <p>© 2025 Astro Tântrica. Todos os direitos reservados.</p>
+    © 2025 Astro Tântrica - Todos os direitos reservados
   </footer>
 
-  <a href="https://wa.me/5599999999999" class="whatsapp-float">💬</a>
-
+  <script>
+    function toggleFAQ(button) {
+      const p = button.nextElementSibling;
+      p.style.display = p.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
