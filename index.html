@@ -224,14 +224,14 @@
   font-weight: 500;
 }
 
-/* Propagandas flutuantes pulsando */
+/* Propagandas flutuantes pulsando - versão neutra */
 .propaganda-flutuante {
   position: fixed;
   width: 120px;
   height: 120px;
-  background: #4b0033;
-  color: #d4af37;
-  border: 2px solid #d4af37;
+  background: #0a0a0a; /* preto escuro */
+  color: #cccccc; /* texto cinza claro */
+  border: 2px solid #555555; /* borda cinza escura */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -241,6 +241,9 @@
   text-align: center;
   z-index: 1000;
   animation: pulsar 1.5s infinite;
+  box-shadow: 0 0 12px #00000055;
+}
+
 }
 
 @keyframes pulsar {
