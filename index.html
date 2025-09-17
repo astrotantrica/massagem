@@ -214,6 +214,51 @@
       text-align: center;
     }
   }
+
+
+/* Endereço abaixo do header */
+.endereco {
+  font-size: 1rem;
+  color: #e6dcc6;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Propagandas flutuantes pulsando */
+.propaganda-flutuante {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  background: #4b0033;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1000;
+  animation: pulsar 1.5s infinite;
+}
+
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.propaganda-top-left { top: 20px; left: 20px; }
+.propaganda-top-right { top: 20px; right: 20px; }
+.propaganda-bottom-left { bottom: 20px; left: 20px; }
+.propaganda-bottom-right { bottom: 20px; right: 20px; }
+
+
+
+
+
+
+  
 </style>
 </head>
 <body>
@@ -320,10 +365,45 @@
   <!-- WhatsApp Flutuante -->
   <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float">💬</a>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <footer>
     © 2025 Astro Tântrica - Todos os direitos reservados
   </footer>
 
+
+
+
+<!-- Propagandas -->
+<div class="propaganda-flutuante propaganda-top-left">Promoção 1</div>
+<div class="propaganda-flutuante propaganda-top-right">Promoção 2</div>
+<div class="propaganda-flutuante propaganda-bottom-left">Promoção 3</div>
+<div class="propaganda-flutuante propaganda-bottom-right">Promoção 4</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <script>
     function toggleFAQ(button) {
       const p = button.nextElementSibling;
