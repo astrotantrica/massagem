@@ -7,20 +7,20 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #333;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #1a0d0d, #000);
+      color: #f2f2f2;
       line-height: 1.6;
     }
 
     header {
-      background: #fafafa;
-      color: #333;
+      background: rgba(0, 0, 0, 0.9);
+      color: #e6b3ff;
       text-align: center;
       padding: 20px;
       font-size: 2rem;
       font-weight: bold;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #330033;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -35,8 +35,8 @@
     h2 {
       text-align: center;
       margin-bottom: 30px;
-      font-size: 1.8rem;
-      color: #444;
+      font-size: 1.9rem;
+      color: #e6b3ff;
     }
 
     /* Galeria de fotos */
@@ -50,18 +50,18 @@
       width: 100%;
       height: 230px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 12px;
       transition: transform 0.3s;
     }
 
     .galeria img:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     /* Texto explicativo */
     .texto {
       font-size: 1.1rem;
-      color: #555;
+      color: #ddd;
       text-align: justify;
     }
 
@@ -74,15 +74,15 @@
     }
 
     .prop {
-      background: #f2f2f2;
+      background: rgba(255, 255, 255, 0.05);
       padding: 20px 40px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-size: 1.2rem;
       font-weight: bold;
-      color: #333;
+      color: #e6b3ff;
       animation: pulse 2s infinite;
       cursor: pointer;
-      border: 1px solid #ddd;
+      border: 1px solid #660066;
     }
 
     @keyframes pulse {
@@ -99,20 +99,35 @@
     }
 
     .depo {
-      background: #fafafa;
+      background: rgba(255, 255, 255, 0.05);
       padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #eee;
+      border-radius: 12px;
+      border: 1px solid #330033;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .depo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #e6b3ff;
+    }
+
+    .depo p {
+      margin: 0;
       font-style: italic;
-      color: #444;
+      color: #f2f2f2;
     }
 
     /* FAQ */
     .faq-item {
-      background: #fafafa;
+      background: rgba(255, 255, 255, 0.05);
       margin: 10px 0;
       border-radius: 6px;
-      border: 1px solid #ddd;
+      border: 1px solid #330033;
       overflow: hidden;
     }
 
@@ -122,9 +137,9 @@
       text-align: left;
       font-size: 1.05rem;
       font-weight: bold;
-      background: #f9f9f9;
+      background: rgba(0, 0, 0, 0.6);
       border: none;
-      color: #444;
+      color: #e6b3ff;
       cursor: pointer;
     }
 
@@ -132,8 +147,8 @@
       padding: 15px;
       margin: 0;
       display: none;
-      color: #555;
-      background: #fff;
+      color: #ddd;
+      background: #0d0d0d;
     }
 
     /* Botão WhatsApp */
@@ -158,14 +173,45 @@
       background: #1ebd5a;
     }
 
+    /* Botão flutuante */
+    .whatsapp-float {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
     /* Rodapé */
     footer {
-      background: #fafafa;
+      background: rgba(0, 0, 0, 0.8);
       text-align: center;
       padding: 15px;
       font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #ddd;
+      color: #aaa;
+      border-top: 1px solid #330033;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      .whatsapp a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
@@ -208,6 +254,9 @@
         Na Astro Tântrica, cada sessão é única e personalizada. Nossos terapeutas especializados criam um ambiente seguro, acolhedor e transformador, guiando você em uma experiência de conexão com o próprio corpo e suas potencialidades.
       </p>
     </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/5599999999999" target="_blank">📲 Agende sua massagem aqui</a>
+    </div>
   </section>
 
   <!-- Propagandas -->
@@ -218,17 +267,35 @@
       <div class="prop">Pacote Detox Energético</div>
       <div class="prop">Experiência Completa Tantra</div>
     </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/5599999999999" target="_blank">📲 Agende sua massagem aqui</a>
+    </div>
   </section>
 
   <!-- Depoimentos -->
   <section>
     <h2>O que dizem nossos clientes</h2>
     <div class="depoimentos">
-      <div class="depo">“Uma experiência única, que mudou minha forma de me conectar comigo mesmo.” – Carlos M.</div>
-      <div class="depo">“Profissionais incríveis, ambiente acolhedor e transformador.” – Mariana S.</div>
-      <div class="depo">“A melhor escolha que já fiz para meu bem-estar.” – Felipe A.</div>
-      <div class="depo">“Saí renovada, com mais energia e equilíbrio.” – Ana L.</div>
-      <div class="depo">“Indico para todos que buscam autoconhecimento.” – João P.</div>
+      <div class="depo">
+        <img src="fotos/cliente1.jpg" alt="Cliente 1">
+        <p>“Uma experiência única, que mudou minha forma de me conectar comigo mesmo.” – Carlos M.</p>
+      </div>
+      <div class="depo">
+        <img src="fotos/cliente2.jpg" alt="Cliente 2">
+        <p>“Profissionais incríveis, ambiente acolhedor e transformador.” – Mariana S.</p>
+      </div>
+      <div class="depo">
+        <img src="fotos/cliente3.jpg" alt="Cliente 3">
+        <p>“A melhor escolha que já fiz para meu bem-estar.” – Felipe A.</p>
+      </div>
+      <div class="depo">
+        <img src="fotos/cliente4.jpg" alt="Cliente 4">
+        <p>“Saí renovada, com mais energia e equilíbrio.” – Ana L.</p>
+      </div>
+      <div class="depo">
+        <img src="fotos/cliente5.jpg" alt="Cliente 5">
+        <p>“Indico para todos que buscam autoconhecimento.” – João P.</p>
+      </div>
     </div>
   </section>
 
@@ -249,14 +316,12 @@
     </div>
     <div class="faq-item">
       <button onclick="toggleFAQ(this)">Como agendo uma sessão?</button>
-      <p>Basta clicar no botão de WhatsApp e falar com nossa equipe.</p>
+      <p>Basta clicar em qualquer botão de WhatsApp e falar com nossa equipe.</p>
     </div>
   </section>
 
-  <!-- Botão WhatsApp -->
-  <div class="whatsapp">
-    <a href="https://wa.me/5599999999999" target="_blank">📲 Agende sua massagem aqui</a>
-  </div>
+  <!-- Botão WhatsApp Flutuante -->
+  <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float">💬</a>
 
   <!-- Rodapé -->
   <footer>
