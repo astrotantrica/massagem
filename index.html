@@ -7,23 +7,26 @@
   <style>
     body {
       margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(180deg, #1a0d0d, #000);
+      font-family: "Helvetica Neue", sans-serif;
+      background: #0d0d0d;
       color: #f2f2f2;
       line-height: 1.6;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.9);
-      color: #e6b3ff;
       text-align: center;
-      padding: 20px;
-      font-size: 2rem;
-      font-weight: bold;
-      border-bottom: 1px solid #330033;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #1a001a, #330033);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #e0aaff;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #d1b3ff;
     }
 
     section {
@@ -31,153 +34,94 @@
       max-width: 1200px;
       margin: auto;
     }
-
     h2 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 1.9rem;
-      color: #e6b3ff;
+      margin-bottom: 40px;
+      color: #e0aaff;
     }
 
-    /* Galeria de fotos */
-    .galeria {
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      gap: 20px;
     }
-
-    .galeria img {
+    .grid img {
       width: 100%;
-      height: 230px;
-      object-fit: cover;
       border-radius: 12px;
-      transition: transform 0.3s;
     }
 
-    .galeria img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Texto explicativo */
     .texto {
-      font-size: 1.1rem;
-      color: #ddd;
-      text-align: justify;
-    }
-
-    /* Propagandas */
-    .propagandas {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .prop {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px 40px;
-      border-radius: 10px;
+      text-align: center;
       font-size: 1.2rem;
-      font-weight: bold;
-      color: #e6b3ff;
-      animation: pulse 2s infinite;
-      cursor: pointer;
-      border: 1px solid #660066;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    /* Depoimentos */
-    .depoimentos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .depo {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #330033;
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .depo img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #e6b3ff;
-    }
-
-    .depo p {
-      margin: 0;
-      font-style: italic;
       color: #f2f2f2;
     }
 
-    /* FAQ */
-    .faq-item {
-      background: rgba(255, 255, 255, 0.05);
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #330033;
-      overflow: hidden;
-    }
-
-    .faq-item button {
-      width: 100%;
-      padding: 15px;
-      text-align: left;
-      font-size: 1.05rem;
-      font-weight: bold;
-      background: rgba(0, 0, 0, 0.6);
-      border: none;
-      color: #e6b3ff;
-      cursor: pointer;
-    }
-
-    .faq-item p {
-      padding: 15px;
-      margin: 0;
-      display: none;
-      color: #ddd;
-      background: #0d0d0d;
-    }
-
-    /* Botão WhatsApp */
-    .whatsapp {
-      display: flex;
-      justify-content: center;
-      margin: 40px 0;
-    }
-
-    .whatsapp a {
-      background: #25d366;
+    .btn {
+      display: inline-block;
+      background: #b30059;
       color: #fff;
-      padding: 15px 25px;
-      border-radius: 50px;
+      padding: 14px 28px;
+      margin: 20px auto;
+      border-radius: 30px;
       text-decoration: none;
-      font-size: 1.2rem;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #e60073;
     }
 
-    .whatsapp a:hover {
-      background: #1ebd5a;
+    .depoimentos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .depoimento {
+      background: #1a001a;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      color: #f2f2f2;
+    }
+    .depoimento img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border: 3px solid #b30059;
+    }
+    .depoimento p {
+      font-size: 1rem;
+    }
+    .depoimento h4 {
+      margin-top: 10px;
+      color: #e0aaff;
     }
 
-    /* Botão flutuante */
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+    .faq h3 {
+      margin-top: 20px;
+      color: #ff99cc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0d0d0d;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+
+    /* Botão WhatsApp flutuante */
     .whatsapp-float {
       position: fixed;
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       bottom: 20px;
       right: 20px;
       background-color: #25d366;
@@ -185,154 +129,101 @@
       border-radius: 50%;
       text-align: center;
       font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
     }
-
-    /* Rodapé */
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #aaa;
-      border-top: 1px solid #330033;
-    }
-
-    /* Responsividade */
-    @media (max-width: 600px) {
-      h2 {
-        font-size: 1.5rem;
-      }
-      .whatsapp a {
-        font-size: 1rem;
-        padding: 12px 20px;
-      }
-    }
   </style>
 </head>
 <body>
+
   <header>
-    Astro Tântrica
+    <h1>Astro Tântrica</h1>
+    <p>Experiências únicas em massagem tântrica</p>
+    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
   </header>
 
-  <!-- Sessão de Fotos -->
   <section>
-    <h2>Momentos de Massagem</h2>
-    <div class="galeria">
+    <h2>Massagens em Destaque</h2>
+    <div class="grid">
       <img src="fotos/massagem1.jpg" alt="Massagem 1">
       <img src="fotos/massagem2.jpg" alt="Massagem 2">
       <img src="fotos/massagem3.jpg" alt="Massagem 3">
       <img src="fotos/massagem4.jpg" alt="Massagem 4">
-      <img src="fotos/massagem5.jpg" alt="Massagem 5">
     </div>
+    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
   </section>
 
-  <!-- Sessão Terapeutas -->
   <section>
     <h2>Terapeutas em Destaque</h2>
-    <div class="galeria">
+    <div class="grid">
       <img src="fotos/terapeuta1.jpg" alt="Terapeuta 1">
       <img src="fotos/terapeuta2.jpg" alt="Terapeuta 2">
       <img src="fotos/terapeuta3.jpg" alt="Terapeuta 3">
-      <img src="fotos/terapeuta4.jpg" alt="Terapeuta 4">
     </div>
+    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
   </section>
 
-  <!-- Texto Explicativo -->
   <section>
     <h2>Sobre a Massagem Tântrica</h2>
-    <div class="texto">
-      <p>
-        A massagem tântrica é uma prática milenar que une técnicas de respiração, toques conscientes e energia vital, proporcionando ao corpo e à mente um estado de relaxamento profundo e expansão da consciência. Diferente de qualquer outra massagem, o tantra trabalha não apenas a parte física, mas também aspectos emocionais e energéticos, liberando bloqueios e ampliando a sensibilidade.
-      </p>
-      <p>
-        Na Astro Tântrica, cada sessão é única e personalizada. Nossos terapeutas especializados criam um ambiente seguro, acolhedor e transformador, guiando você em uma experiência de conexão com o próprio corpo e suas potencialidades.
-      </p>
-    </div>
-    <div class="whatsapp">
-      <a href="https://wa.me/5599999999999" target="_blank">📲 Agende sua massagem aqui</a>
-    </div>
+    <p class="texto">
+      A massagem tântrica é uma jornada de autoconhecimento, prazer e libertação.
+      Ela trabalha energia vital, desbloqueia emoções e expande a consciência.
+      Nossa missão é oferecer um ambiente seguro, acolhedor e transformador,
+      conduzido por terapeutas experientes que respeitam seu tempo e limites.
+      A experiência promove relaxamento profundo, conexão interior e intensificação do prazer erótico,
+      proporcionando uma vivência única de bem-estar físico e emocional.
+    </p>
+    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
   </section>
 
-  <!-- Propagandas -->
   <section>
-    <h2>Ofertas Especiais</h2>
-    <div class="propagandas">
-      <div class="prop">Sessão Relaxante - Promoção</div>
-      <div class="prop">Pacote Detox Energético</div>
-      <div class="prop">Experiência Completa Tantra</div>
-    </div>
-    <div class="whatsapp">
-      <a href="https://wa.me/5599999999999" target="_blank">📲 Agende sua massagem aqui</a>
-    </div>
-  </section>
-
-  <!-- Depoimentos -->
-  <section>
-    <h2>O que dizem nossos clientes</h2>
+    <h2>Depoimentos</h2>
     <div class="depoimentos">
-      <div class="depo">
+      <div class="depoimento">
         <img src="fotos/cliente1.jpg" alt="Cliente 1">
-        <p>“Uma experiência única, que mudou minha forma de me conectar comigo mesmo.” – Carlos M.</p>
+        <p>"Uma experiência transformadora, nunca imaginei sentir tamanha energia. Recomendo a todos!"</p>
+        <h4>- Mariana</h4>
       </div>
-      <div class="depo">
+      <div class="depoimento">
         <img src="fotos/cliente2.jpg" alt="Cliente 2">
-        <p>“Profissionais incríveis, ambiente acolhedor e transformador.” – Mariana S.</p>
+        <p>"Profissionalismo e sensibilidade. Saí renovado e com outra visão sobre meu corpo e prazer."</p>
+        <h4>- Rafael</h4>
       </div>
-      <div class="depo">
+      <div class="depoimento">
         <img src="fotos/cliente3.jpg" alt="Cliente 3">
-        <p>“A melhor escolha que já fiz para meu bem-estar.” – Felipe A.</p>
-      </div>
-      <div class="depo">
-        <img src="fotos/cliente4.jpg" alt="Cliente 4">
-        <p>“Saí renovada, com mais energia e equilíbrio.” – Ana L.</p>
-      </div>
-      <div class="depo">
-        <img src="fotos/cliente5.jpg" alt="Cliente 5">
-        <p>“Indico para todos que buscam autoconhecimento.” – João P.</p>
+        <p>"Ambiente acolhedor e energia incrível. Uma das melhores escolhas que já fiz na vida."</p>
+        <h4>- Ana Paula</h4>
       </div>
     </div>
+    <a href="https://wa.me/5599999999999" class="btn">Agende sua massagem aqui</a>
   </section>
 
-  <!-- FAQ -->
   <section>
     <h2>Perguntas Frequentes</h2>
-    <div class="faq-item">
-      <button onclick="toggleFAQ(this)">O que é a massagem tântrica?</button>
-      <p>A massagem tântrica é um processo de autoconhecimento, expansão de energia e relaxamento profundo.</p>
-    </div>
-    <div class="faq-item">
-      <button onclick="toggleFAQ(this)">Preciso ter experiência?</button>
-      <p>Não, nossos terapeutas guiam cada sessão de acordo com sua necessidade.</p>
-    </div>
-    <div class="faq-item">
-      <button onclick="toggleFAQ(this)">É seguro?</button>
-      <p>Sim, todas as sessões são conduzidas com ética, respeito e cuidado total.</p>
-    </div>
-    <div class="faq-item">
-      <button onclick="toggleFAQ(this)">Como agendo uma sessão?</button>
-      <p>Basta clicar em qualquer botão de WhatsApp e falar com nossa equipe.</p>
+    <div class="faq">
+      <h3>1. Como funciona a massagem tântrica?</h3>
+      <p>É uma prática que envolve toques conscientes para liberar energia e proporcionar bem-estar físico e emocional.</p>
+
+      <h3>2. A massagem é erótica?</h3>
+      <p>A massagem tântrica pode envolver prazer erótico, mas sempre com respeito, segurança e foco no autoconhecimento.</p>
+
+      <h3>3. Preciso tirar a roupa?</h3>
+      <p>Sim, a nudez faz parte do processo, mas você sempre estará no controle e respeitado em seus limites.</p>
+
+      <h3>4. Como agendar uma sessão?</h3>
+      <p>Basta clicar nos botões de WhatsApp espalhados pelo site e agendar sua experiência.</p>
     </div>
   </section>
 
-  <!-- Botão WhatsApp Flutuante -->
-  <a href="https://wa.me/5599999999999" target="_blank" class="whatsapp-float">💬</a>
-
-  <!-- Rodapé -->
   <footer>
-    © 2025 Astro Tântrica - Todos os direitos reservados
+    <p>© 2025 Astro Tântrica. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-    function toggleFAQ(button) {
-      const p = button.nextElementSibling;
-      p.style.display = p.style.display === "block" ? "none" : "block";
-    }
-  </script>
+  <a href="https://wa.me/5599999999999" class="whatsapp-float">💬</a>
+
 </body>
 </html>
