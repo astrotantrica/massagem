@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: "Helvetica Neue", sans-serif;
-      background: #0d0d0d;
+      background: #0a0a0a;
       color: #f2f2f2;
       line-height: 1.6;
     }
@@ -16,17 +16,19 @@
     header {
       text-align: center;
       padding: 50px 20px;
-      background: linear-gradient(135deg, #1a001a, #330033);
+      background: linear-gradient(135deg, #1a0d0d, #0a0a0a);
+      border-bottom: 2px solid #b8860b;
     }
     header h1 {
       font-size: 3rem;
       margin: 0;
-      color: #e0aaff;
+      color: #d4af37;
+      text-shadow: 0 0 8px rgba(212,175,55,0.6);
     }
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
-      color: #d1b3ff;
+      color: #c0a060;
     }
 
     section {
@@ -37,7 +39,8 @@
     h2 {
       text-align: center;
       margin-bottom: 40px;
-      color: #e0aaff;
+      color: #d4af37;
+      text-shadow: 0 0 5px rgba(212,175,55,0.5);
     }
 
     .grid {
@@ -48,7 +51,14 @@
     .grid img {
       width: 100%;
       border-radius: 12px;
+      border: 2px solid #b8860b;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeIn 1s forwards;
     }
+    .grid img:nth-child(2) { animation-delay: 0.2s; }
+    .grid img:nth-child(3) { animation-delay: 0.4s; }
+    .grid img:nth-child(4) { animation-delay: 0.6s; }
 
     .texto {
       text-align: center;
@@ -58,17 +68,19 @@
 
     .btn {
       display: inline-block;
-      background: #b30059;
-      color: #fff;
+      background: #0a0a0a;
+      border: 2px solid #d4af37;
+      color: #d4af37;
       padding: 14px 28px;
       margin: 20px auto;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
     .btn:hover {
-      background: #e60073;
+      background: #d4af37;
+      color: #0a0a0a;
     }
 
     .depoimentos {
@@ -77,26 +89,33 @@
       gap: 30px;
     }
     .depoimento {
-      background: #1a001a;
+      background: #1a0d0d;
       padding: 25px;
       border-radius: 15px;
       text-align: center;
+      border: 1px solid #b8860b;
       color: #f2f2f2;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
     }
+    .depoimento:nth-child(2) { animation-delay: 0.3s; }
+    .depoimento:nth-child(3) { animation-delay: 0.6s; }
+
     .depoimento img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       margin-bottom: 15px;
       object-fit: cover;
-      border: 3px solid #b30059;
+      border: 3px solid #d4af37;
     }
     .depoimento p {
       font-size: 1rem;
     }
     .depoimento h4 {
       margin-top: 10px;
-      color: #e0aaff;
+      color: #c0a060;
     }
 
     .faq {
@@ -105,13 +124,13 @@
     }
     .faq h3 {
       margin-top: 20px;
-      color: #ff99cc;
+      color: #d4af37;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background: #0d0d0d;
+      background: #0a0a0a;
       color: #aaa;
       font-size: 0.9rem;
       border-top: 1px solid #222;
@@ -135,6 +154,25 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
     }
   </style>
 </head>
