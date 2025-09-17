@@ -10,6 +10,7 @@
       font-family: "Poppins", sans-serif;
       background-color: #3B0A14; /* Bordô escuro */
       color: #E6D3B1; /* Champagne */
+      overflow-x: hidden;
     }
 
     header {
@@ -29,6 +30,14 @@
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -48,6 +57,11 @@
       width: 100%;
       border-radius: 12px;
       border: 2px solid #E6D3B1;
+      transition: transform 0.3s;
+    }
+
+    .fotos img:hover, .terapeutas img:hover {
+      transform: scale(1.05);
     }
 
     .texto {
@@ -167,7 +181,7 @@
     <h1>Astro Tântrica</h1>
   </header>
 
-  <section>
+  <section class="fade">
     <h2>Massagens Sensuais</h2>
     <div class="fotos">
       <img src="fotos/massagem1.jpg" alt="Massagem 1">
@@ -177,7 +191,7 @@
     <a href="https://wa.me/559999999999" class="btn">Agende sua massagem aqui</a>
   </section>
 
-  <section>
+  <section class="fade">
     <h2>Terapeutas em Destaque</h2>
     <div class="terapeutas">
       <img src="fotos/terapeuta1.jpg" alt="Terapeuta 1">
@@ -186,56 +200,12 @@
     </div>
   </section>
 
-  <section>
+  <section class="fade">
     <h2>Sobre a Massagem</h2>
     <div class="texto">
       A massagem tântrica é uma experiência transformadora que conecta corpo e mente através do toque consciente, proporcionando prazer, autoconhecimento e desbloqueio energético. No Astro Tântrica, nossos terapeutas especializados oferecem um ambiente seguro, acolhedor e profundamente sensorial, onde cada sessão é conduzida com respeito e dedicação, guiando você a explorar novas dimensões do prazer e da intimidade.
     </div>
   </section>
 
-  <section class="propaganda">
-    <p>🔥 Promoção exclusiva este mês: agende já sua sessão! 🔥</p>
-    <a href="https://wa.me/559999999999" class="btn">Agende sua massagem aqui</a>
-  </section>
-
-  <section>
-    <h2>Depoimentos</h2>
-    <div class="depoimentos">
-      <div class="depoimento">
-        <img src="fotos/cliente1.jpg" alt="Cliente 1">
-        <p>"Uma experiência única, me senti renovado(a)!"</p>
-      </div>
-      <div class="depoimento">
-        <img src="fotos/cliente2.jpg" alt="Cliente 2">
-        <p>"Nunca imaginei que pudesse alcançar tanto prazer e relaxamento."</p>
-      </div>
-      <div class="depoimento">
-        <img src="fotos/cliente3.jpg" alt="Cliente 3">
-        <p>"Profissionais incríveis, ambiente acolhedor e respeitoso."</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq">
-    <h2>Perguntas Frequentes</h2>
-    <details>
-      <summary>O que é a massagem tântrica?</summary>
-      <p>É uma prática que combina técnicas de respiração, toques e energia para desbloquear sensações e proporcionar prazer consciente.</p>
-    </details>
-    <details>
-      <summary>Quanto tempo dura uma sessão?</summary>
-      <p>Cada sessão pode durar entre 1h e 2h, dependendo da sua necessidade.</p>
-    </details>
-    <details>
-      <summary>Preciso de experiência prévia?</summary>
-      <p>Não, nossos terapeutas conduzem todo o processo para que você se sinta confortável.</p>
-    </details>
-  </section>
-
-  <a href="https://wa.me/559999999999" class="whatsapp-float">💬</a>
-
-  <footer>
-    © 2025 Astro Tântrica - Todos os direitos reservados.
-  </footer>
-</body>
-</html>
+  <section class="propaganda fade">
+    <p>🔥 Promoção exclusiva este mês: agende já sua sessão!
