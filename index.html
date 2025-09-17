@@ -57,13 +57,16 @@
     box-shadow: 0 0 15px #55555588;
   }
 
-  /* Texto */
   .texto {
-    line-height: 1.8;
-    text-align: justify;
-    font-size: 1.2rem;
-    color: #dcdcdc;
-  }
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  max-width: 100%;        /* impede overflow em telas pequenas */
+  margin: 0 auto;         /* centraliza se necessário */
+  word-wrap: break-word;  /* evita palavras quebrando o layout */
+}
+
 
   /* Botões */
   .btn {
@@ -206,9 +209,15 @@
   }
 
   @media (max-width: 600px) {
-  h2 {
-    font-size: 1.6rem;
+  .btn {
+    width: 90%;       /* ocupa quase toda a tela */
+    padding: 18px 0;  /* altura confortável */
+    text-align: center;
   }
+
+
+
+
 
   .btn {
     width: 90%;          /* largura adequada para celular */
